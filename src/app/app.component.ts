@@ -44,6 +44,7 @@ export function GenerateEmptyList(i: number): any[] {
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
+    standalone: true,
     animations: [
         trigger('routeAnimations', [
             transition('* => *', [

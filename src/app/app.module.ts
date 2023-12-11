@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule,} from '@angular/platform-browser';
+import {BrowserModule, provideClientHydration,} from '@angular/platform-browser';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TransferHttpCacheModule} from '@nguniversal/common';
 
 import {
     faBell,
@@ -169,13 +168,13 @@ import { ContainerComponent } from './components/container/container.component';
         HttpClientModule,
         FontAwesomeModule,
         BrowserAnimationsModule,
-        TransferHttpCacheModule,
         NgxMasonryModule,
         NgOptimizedImage,
         FormsModule,
     ],
     providers: [
         {provide: HTTP_INTERCEPTORS, useClass: ApiTokenInterceptor, multi: true},
+        // provideClientHydration()
     ],
     bootstrap: [AppComponent]
 })
